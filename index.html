@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Home - pohjolanetwork.cloud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="links.html">Links</a></li>
+        </ul>
+    </nav>
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="https://pohjolanetwork.cloud/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <canvas id="canvas"></canvas>
+    
+    <div class="content">
+        <h1>Welcome to pohjolanetwork.cloud</h1>
+        <h1>Website under construction</h1>
+        <p>Website is not fully done so expect bugs.</p>
+    </div>
+
+    <!-- JS to Play Music on First Mouse Move -->
+    <script>
+        const audio = document.getElementById('background-music');
+
+        // Play music on first mouse move
+        function playMusicOnMouseMove() {
+            if (audio.paused) {
+                audio.play(); // Play the audio
+            }
+            // Remove the event listener after the music starts playing
+            window.removeEventListener('mousemove', playMusicOnMouseMove);
+        }
+
+        // Add event listener to trigger music on mouse move
+        window.addEventListener('mousemove', playMusicOnMouseMove);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
